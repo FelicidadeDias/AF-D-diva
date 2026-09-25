@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academia de Formação Dádiva | Demo</title>
+
+<meta name="description" content="Demonstração de presença digital profissional para a Academia de Formação Dádiva. Cursos de pastelaria, culinária e fast food.">
+
+<style>
+:root{
+  --primary:#8b451f;
+  --primary-dark:#542812;
+  --gold:#d9a441;
+  --cream:#fff9f1;
+  --cream-dark:#f3e3cf;
+  --green:#25d366;
+  --dark:#211812;
+  --text:#5d5048;
+  --white:#fff;
+  --shadow:0 15px 40px rgba(84,40,18,.12);
+  --radius:22px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+.container{
+  width:min(1160px,92%);
+  margin:auto;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+/* DEMO */
+.demo-bar{
+  background:#fff0c5;
+  color:#674900;
+  text-align:center;
+  padding:9px 15px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,249,241,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(84,40,18,.08);
+}
+
+.nav{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:900;
+  color:var(--primary-dark);
+  font-size:19px;
+}
+
+.logo-mark{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:var(--primary);
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:21px;
+}
+
+nav a{
+  color:#61483a;
+  font-size:14px;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.nav-cta{
+  background:var(--primary);
+  color:white!important;
+  padding:11px 17px;
+  border-radius:30px;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  min-height:680px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+  padding:75px 0;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border-radius:30px;
+  background:#f1dfc7;
+  color:var(--primary);
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:Georgia,serif;
+  color:var(--primary-dark);
+  font-size:clamp(42px,5.5vw,68px);
+  line-height:1.04;
+  margin-bottom:22px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero p{
+  max-width:600px;
+  color:var(--text);
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:14px 21px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:white;
+}
+
+.btn-secondary{
+  background:white;
+  color:var(--primary);
+  border:1px solid #dfc9b1;
+}
+
+.hero-image{
+  min-height:520px;
+  border-radius:35px;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(84,40,18,.08),rgba(84,40,18,.08)),
+    url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1100&q=85")
+    center/cover;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+
+.hero-card{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  background:rgba(255,255,255,.93);
+  border-radius:20px;
+  padding:20px;
+}
+
+.hero-card strong{
+  display:block;
+  color:var(--primary-dark);
+  font-size:19px;
+  margin-bottom:4px;
+}
+
+/* STATS */
+.stats{
+  background:var(--primary-dark);
+  color:white;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+  text-align:center;
+  padding:32px 15px;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+
+.stat:last-child{
+  border-right:0;
+}
+
+.stat strong{
+  display:block;
+  color:#f1c56c;
+  font-size:32px;
+}
+
+.stat span{
+  color:#e4d2c7;
+  font-size:14px;
+}
+
+/* SECTIONS */
+section{
+  padding:90px 0;
+}
+
+.section-head{
+  max-width:720px;
+  text-align:center;
+  margin:0 auto 45px;
+}
+
+.section-head .eyebrow{
+  color:var(--gold);
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.section-head h2{
+  font-family:Georgia,serif;
+  color:var(--primary-dark);
+  font-size:clamp(32px,5vw,48px);
+  line-height:1.1;
+  margin:9px 0 13px;
+}
+
+.section-head p{
+  color:var(--text);
+}
+
+/* COURSES */
+.courses{
+  background:white;
+}
+
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.course{
+  background:var(--cream);
+  border:1px solid #efdfcf;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 7px 24px rgba(84,40,18,.06);
+}
+
+.course-img{
+  height:220px;
+  overflow:hidden;
+}
+
+.course-img img{
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.course:hover .course-img img{
+  transform:scale(1.04);
+}
+
+.course-body{
+  padding:22px;
+}
+
+.course-tag{
+  display:inline-block;
+  background:#f0dfc9;
+  color:var(--primary);
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.course h3{
+  color:var(--primary-dark);
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.course p{
+  color:var(--text);
+  font-size:14px;
+  min-height:66px;
+}
+
+.course-info{
+  margin-top:18px;
+  display:grid;
+  gap:7px;
+  color:#66564d;
+  font-size:13px;
+}
+
+.course-bottom{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.course-price{
+  font-weight:900;
+  color:var(--primary);
+}
+
+.course-btn{
+  border:0;
+  background:var(--green);
+  color:white;
+  padding:10px 14px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* TURMAS */
+.turmas{
+  background:var(--cream);
+}
+
+.turma-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.turma{
+  background:white;
+  border:1px solid #edddcd;
+  border-radius:20px;
+  padding:25px;
+}
+
+.turma-date{
+  width:60px;
+  height:65px;
+  background:var(--primary);
+  color:white;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:17px;
+}
+
+.turma-date strong{
+  font-size:20px;
+  line-height:1;
+}
+
+.turma-date small{
+  font-size:10px;
+  text-transform:uppercase;
+}
+
+.turma h3{
+  color:var(--primary-dark);
+  margin-bottom:9px;
+}
+
+.turma p{
+  font-size:14px;
+  color:var(--text);
+}
+
+.turma-details{
+  border-top:1px solid #eee1d6;
+  margin-top:18px;
+  padding-top:15px;
+  display:grid;
+  gap:7px;
+  font-size:13px;
+  color:#6b5a50;
+}
+
+.turma a{
+  display:block;
+  margin-top:18px;
+  text-align:center;
+  background:var(--primary);
+  color:white;
+  padding:11px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+/* PRE INSCRIPTION */
+.inscricao{
+  background:var(--primary-dark);
+  color:white;
+}
+
+.inscricao-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.inscricao h2{
+  font-family:Georgia,serif;
+  font-size:45px;
+  line-height:1.1;
+  margin:12px 0 18px;
+}
+
+.inscricao-text p{
+  color:#ead8cc;
+}
+
+.benefits{
+  margin-top:25px;
+  display:grid;
+  gap:11px;
+}
+
+.benefits div{
+  display:flex;
+  gap:10px;
+}
+
+.benefits b{
+  color:#f2c36a;
+}
+
+.form{
+  background:white;
+  color:var(--dark);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.form h3{
+  color:var(--primary-dark);
+  margin-bottom:18px;
+}
+
+.form input,
+.form select,
+.form textarea{
+  width:100%;
+  border:1px solid #e2d2c5;
+  border-radius:11px;
+  padding:13px 14px;
+  margin-bottom:12px;
+  outline:none;
+}
+
+.form textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.form button{
+  width:100%;
+  border:0;
+  padding:14px;
+  border-radius:12px;
+  background:var(--green);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* COURSE DETAIL */
+.detail{
+  background:white;
+}
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+}
+
+.detail-image{
+  height:470px;
+  border-radius:28px;
+  overflow:hidden;
+}
+
+.detail-image img{
+  height:100%;
+  object-fit:cover;
+}
+
+.detail-content .eyebrow{
+  color:var(--gold);
+  font-weight:bold;
+}
+
+.detail-content h2{
+  font-family:Georgia,serif;
+  color:var(--primary-dark);
+  font-size:43px;
+  line-height:1.1;
+  margin:10px 0 18px;
+}
+
+.detail-content p{
+  color:var(--text);
+}
+
+.detail-list{
+  display:grid;
+  gap:11px;
+  margin:23px 0;
+}
+
+.detail-list div{
+  padding:12px 15px;
+  border-radius:12px;
+  background:var(--cream);
+}
+
+/* GALLERY */
+.gallery{
+  background:var(--cream-dark);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.gallery-item{
+  height:240px;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.gallery-item img{
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.05);
+}
+
+/* WHY */
+.why{
+  background:white;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.why-card{
+  padding:28px;
+  background:var(--cream);
+  border:1px solid #efdfce;
+  border-radius:20px;
+}
+
+.why-icon{
+  font-size:35px;
+  margin-bottom:13px;
+}
+
+.why-card h3{
+  color:var(--primary-dark);
+  margin-bottom:7px;
+}
+
+.why-card p{
+  color:var(--text);
+  font-size:14px;
+}
+
+/* CONTACT */
+.contact{
+  background:var(--cream);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-card{
+  background:white;
+  padding:30px;
+  border-radius:24px;
+  border:1px solid #ebdccc;
+}
+
+.contact-card h3{
+  color:var(--primary-dark);
+  margin-bottom:18px;
+}
+
+.contact-item{
+  display:flex;
+  gap:14px;
+  margin:17px 0;
+}
+
+.contact-item span{
+  font-size:22px;
+}
+
+.contact-item strong{
+  display:block;
+}
+
+.contact-item small{
+  color:#7c6b61;
+}
+
+.map{
+  min-height:320px;
+  border-radius:20px;
+  background:
+    linear-gradient(rgba(84,40,18,.15),rgba(84,40,18,.15)),
+    url("https://images.unsplash.com/photo-1524666041070-9f2f3e0c4b6a?auto=format&fit=crop&w=900&q=80")
+    center/cover;
+  display:grid;
+  place-items:center;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+.map div{
+  background:rgba(33,24,18,.82);
+  padding:20px;
+  border-radius:18px;
+}
+
+/* FOOTER */
+footer{
+  background:#28150d;
+  color:#d8c7bd;
+  padding:45px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:40px;
+}
+
+footer h3{
+  color:white;
+  margin-bottom:12px;
+}
+
+footer p,
+footer a{
+  font-size:14px;
+  color:#c8b5aa;
+  margin:5px 0;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:35px;
+  padding-top:20px;
+  text-align:center;
+  font-size:12px;
+  color:#9e887d;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:59px;
+  height:59px;
+  background:var(--green);
+  color:white;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:27px;
+  z-index:999;
+  box-shadow:0 9px 25px rgba(0,0,0,.2);
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,120px);
+  background:#28150d;
+  color:white;
+  padding:14px 22px;
+  border-radius:30px;
+  z-index:2000;
+  transition:.3s;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+}
+
+/* RESPONSIVE */
+@media(max-width:950px){
+
+  .hero,
+  .inscricao-grid,
+  .detail-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .hero-image{
+    min-height:420px;
+  }
+
+  .course-grid,
+  .turma-grid,
+  .why-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat{
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:650px){
+
+  nav{
+    display:none;
+    position:absolute;
+    top:78px;
+    left:0;
+    right:0;
+    padding:20px;
+    background:var(--cream);
+    flex-direction:column;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .course-grid,
+  .turma-grid,
+  .why-grid,
+  .gallery-grid,
+  .stats-grid,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .hero-image{
+    min-height:350px;
+  }
+
+  .hero{
+    padding:45px 0;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .inscricao h2{
+    font-size:36px;
+  }
+
+  .detail-image{
+    height:350px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="demo-bar">
+  DEMONSTRAÇÃO — Dados, preços, contactos, datas e informações abaixo são fictícios.
+</div>
+
+
+<header>
+
+  <div class="container nav">
+
+    <a href="#inicio" class="logo">
+      <span class="logo-mark">🎓</span>
+      Academia Dádiva
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav">
+
+      <a href="#inicio">Início</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#turmas">Próximas turmas</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contactos">Contactos</a>
+
+      <a href="#inscricao" class="nav-cta">
+        Pré-inscrição
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="container hero" id="inicio">
+
+  <div>
+
+    <span class="badge">
+      🎓 FORMAÇÃO • PRÁTICA • PROFISSIONAL
+    </span>
+
+    <h1>
+      Aprenda hoje.
+      <span>Prepare o seu futuro.</span>
+    </h1>
+
+    <p>
+      Formação prática em pastelaria, culinária e fast food,
+      pensada para quem deseja aprender novas competências
+      e transformar conhecimento em oportunidades.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#cursos" class="btn btn-primary">
+        📚 Ver formações
+      </a>
+
+      <a href="#inscricao" class="btn btn-secondary">
+        ✍️ Fazer pré-inscrição
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-image">
+
+    <div class="hero-card">
+
+      <strong>Próxima turma em destaque</strong>
+
+      <span>
+        Curso de Pastelaria — inscrições demonstrativas abertas.
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+  <div class="container stats-grid">
+
+    <div class="stat">
+      <strong>+15</strong>
+      <span>Formações realizadas*</span>
+    </div>
+
+    <div class="stat">
+      <strong>+200</strong>
+      <span>Formandos*</span>
+    </div>
+
+    <div class="stat">
+      <strong>3</strong>
+      <span>Áreas de formação</span>
+    </div>
+
+    <div class="stat">
+      <strong>100%</strong>
+      <span>Foco prático*</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CURSOS -->
+
+<section class="courses" id="cursos">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Catálogo de formações</span>
+
+      <h2>
+        Escolha a formação que combina consigo
+      </h2>
+
+      <p>
+        Cada curso pode ter uma página própria com programa,
+        duração, horário, valor, turma e pré-inscrição.
+      </p>
+
+    </div>
+
+
+    <div class="course-grid">
+
+
+      <article class="course">
+
+        <div class="course-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80"
+            alt="Curso de pastelaria">
+
+        </div>
+
+        <div class="course-body">
+
+          <span class="course-tag">MAIS PROCURADO</span>
+
+          <h3>Pastelaria</h3>
+
+          <p>
+            Aprenda técnicas de preparação, montagem,
+            decoração e apresentação de produtos de pastelaria.
+          </p>
+
+          <div class="course-info">
+
+            <span>⏱️ Duração: 4 semanas</span>
+            <span>📅 Aulas: Terças e Quintas</span>
+            <span>🕐 Horário: 14h00–17h00</span>
+
+          </div>
+
+          <div class="course-bottom">
+
+            <span class="course-price">
+              35.000 Kz*
+            </span>
+
+            <button
+              class="course-btn"
+              onclick="selectCourse('Pastelaria')">
+              Inscrever
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="course">
+
+        <div class="course-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80"
+            alt="Curso de culinária">
+
+        </div>
+
+        <div class="course-body">
+
+          <span class="course-tag">FORMAÇÃO PRÁTICA</span>
+
+          <h3>Culinária</h3>
+
+          <p>
+            Conhecimentos práticos de preparação,
+            organização, técnicas culinárias e apresentação.
+          </p>
+
+          <div class="course-info">
+
+            <span>⏱️ Duração: 5 semanas</span>
+            <span>📅 Aulas: Segundas e Quartas</span>
+            <span>🕐 Horário: 09h00–12h00</span>
+
+          </div>
+
+          <div class="course-bottom">
+
+            <span class="course-price">
+              40.000 Kz*
+            </span>
+
+            <button
+              class="course-btn"
+              onclick="selectCourse('Culinária')">
+              Inscrever
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="course">
+
+        <div class="course-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+            alt="Curso de fast food">
+
+        </div>
+
+        <div class="course-body">
+
+          <span class="course-tag">NOVA TURMA</span>
+
+          <h3>Fast Food</h3>
+
+          <p>
+            Aprenda a preparar hambúrgueres, sanduíches,
+            molhos e outros produtos de fast food.
+          </p>
+
+          <div class="course-info">
+
+            <span>⏱️ Duração: 3 semanas</span>
+            <span>📅 Aulas: Sextas e Sábados</span>
+            <span>🕐 Horário: 15h00–18h00</span>
+
+          </div>
+
+          <div class="course-bottom">
+
+            <span class="course-price">
+              30.000 Kz*
+            </span>
+
+            <button
+              class="course-btn"
+              onclick="selectCourse('Fast Food')">
+              Inscrever
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <p style="text-align:center;margin-top:25px;font-size:12px;color:#87756a;">
+      *Valores e informações apresentados exclusivamente para demonstração.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- TURMAS -->
+
+<section class="turmas" id="turmas">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Próximas turmas</span>
+
+      <h2>
+        Encontre uma turma e faça a sua pré-inscrição
+      </h2>
+
+      <p>
+        Cada turma pode ser divulgada individualmente,
+        com link próprio para partilha nas redes sociais e WhatsApp.
+      </p>
+
+    </div>
+
+
+    <div class="turma-grid">
+
+
+      <div class="turma">
+
+        <div class="turma-date">
+          <strong>12</strong>
+          <small>OUT</small>
+        </div>
+
+        <h3>Pastelaria — Turma A</h3>
+
+        <p>
+          Formação prática de pastelaria para iniciantes.
+        </p>
+
+        <div class="turma-details">
+
+          <span>📅 Início: 12 de Outubro</span>
+          <span>🕐 14h00 às 17h00</span>
+          <span>📍 Luanda — Local fictício</span>
+          <span>👥 Vagas: 15*</span>
+
+        </div>
+
+        <a href="#inscricao"
+           onclick="setCourse('Pastelaria')">
+          Quero esta turma
+        </a>
+
+      </div>
+
+
+      <div class="turma">
+
+        <div class="turma-date">
+          <strong>19</strong>
+          <small>OUT</small>
+        </div>
+
+        <h3>Culinária — Turma B</h3>
+
+        <p>
+          Formação prática para desenvolvimento de técnicas culinárias.
+        </p>
+
+        <div class="turma-details">
+
+          <span>📅 Início: 19 de Outubro</span>
+          <span>🕐 09h00 às 12h00</span>
+          <span>📍 Luanda — Local fictício</span>
+          <span>👥 Vagas: 12*</span>
+
+        </div>
+
+        <a href="#inscricao"
+           onclick="setCourse('Culinária')">
+          Quero esta turma
+        </a>
+
+      </div>
+
+
+      <div class="turma">
+
+        <div class="turma-date">
+          <strong>26</strong>
+          <small>OUT</small>
+        </div>
+
+        <h3>Fast Food — Turma C</h3>
+
+        <p>
+          Aprenda técnicas práticas para produção de fast food.
+        </p>
+
+        <div class="turma-details">
+
+          <span>📅 Início: 26 de Outubro</span>
+          <span>🕐 15h00 às 18h00</span>
+          <span>📍 Luanda — Local fictício</span>
+          <span>👥 Vagas: 15*</span>
+
+        </div>
+
+        <a href="#inscricao"
+           onclick="setCourse('Fast Food')">
+          Quero esta turma
+        </a>
+
+      </div>
+
+
+    </div>
+
+    <p style="text-align:center;margin-top:20px;font-size:12px;color:#87756a;">
+      *Datas, vagas e locais são fictícios nesta demonstração.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- PRÉ-INSCRIÇÃO -->
+
+<section class="inscricao" id="inscricao">
+
+  <div class="container inscricao-grid">
+
+    <div class="inscricao-text">
+
+      <span style="color:#f0bd62;font-weight:bold;">
+        PRÉ-INSCRIÇÃO ONLINE
+      </span>
+
+      <h2>
+        Dê o primeiro passo para a sua formação.
+      </h2>
+
+      <p>
+        Em vez de o interessado apenas ver uma publicação,
+        pode entrar diretamente no processo de inscrição,
+        deixando os seus dados para contacto.
+      </p>
+
+      <div class="benefits">
+
+        <div>
+          <b>✓</b>
+          Escolha a formação
+        </div>
+
+        <div>
+          <b>✓</b>
+          Escolha a turma
+        </div>
+
+        <div>
+          <b>✓</b>
+          Deixe os seus dados
+        </div>
+
+        <div>
+          <b>✓</b>
+          Envie diretamente pelo WhatsApp
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="form">
+
+      <h3>Formulário de pré-inscrição</h3>
+
+      <input
+        id="nome"
+        type="text"
+        placeholder="Nome completo">
+
+      <input
+        id="telefone"
+        type="tel"
+        placeholder="Número de telefone">
+
+      <select id="curso">
+
+        <option value="">
+          Escolha a formação
+        </option>
+
+        <option>Pastelaria</option>
+        <option>Culinária</option>
+        <option>Fast Food</option>
+
+      </select>
+
+      <select id="turma">
+
+        <option value="">
+          Escolha a turma
+        </option>
+
+        <option>Turma A — Outubro</option>
+        <option>Turma B — Outubro</option>
+        <option>Turma C — Outubro</option>
+
+      </select>
+
+      <textarea
+        id="mensagem"
+        placeholder="Alguma dúvida ou informação adicional?"></textarea>
+
+      <button onclick="sendRegistration()">
+        📲 Enviar pré-inscrição pelo WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DETALHE DO CURSO -->
+
+<section class="detail">
+
+  <div class="container detail-grid">
+
+    <div class="detail-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=85"
+        alt="Formação prática">
+
+    </div>
+
+
+    <div class="detail-content">
+
+      <span class="eyebrow">
+        PÁGINA INDIVIDUAL DE FORMAÇÃO
+      </span>
+
+      <h2>
+        Cada curso pode ter a sua própria página.
+      </h2>
+
+      <p>
+        Esta área demonstra como uma formação específica poderia
+        ser apresentada de forma completa, permitindo ao interessado
+        encontrar todas as informações antes de fazer a pré-inscrição.
+      </p>
+
+      <div class="detail-list">
+
+        <div>📚 Programa completo da formação</div>
+        <div>⏱️ Duração e carga horária</div>
+        <div>📅 Datas e horários da turma</div>
+        <div>💰 Valor da formação</div>
+        <div>📍 Localização</div>
+        <div>📲 Botão de pré-inscrição</div>
+
+      </div>
+
+      <a href="#inscricao" class="btn btn-primary">
+        Quero saber mais
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALERIA -->
+
+<section class="gallery" id="galeria">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Galeria</span>
+
+      <h2>
+        Mostre o trabalho dos seus formandos
+      </h2>
+
+      <p>
+        Uma galeria visual pode mostrar pratos, bolos,
+        trabalhos práticos, certificados, aulas e momentos
+        das formações.
+      </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
+          alt="Trabalho de pastelaria">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=80"
+          alt="Aula prática">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
+          alt="Fast food">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80"
+          alt="Produtos">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=700&q=80"
+          alt="Cupcakes">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+          alt="Culinária">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=700&q=80"
+          alt="Preparação culinária">
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80"
+          alt="Formação prática">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- VANTAGENS -->
+
+<section class="why">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Presença digital</span>
+
+      <h2>
+        Muito mais do que uma página
+      </h2>
+
+      <p>
+        A demonstração foi pensada para transformar o website
+        numa ferramenta de divulgação das formações.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+      <div class="why-card">
+
+        <div class="why-icon">📱</div>
+
+        <h3>Divulgação fácil</h3>
+
+        <p>
+          Cada turma pode ter um link próprio para ser partilhado
+          no WhatsApp, Facebook, Instagram ou TikTok.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">🎓</div>
+
+        <h3>Catálogo de cursos</h3>
+
+        <p>
+          Todas as formações podem ficar organizadas num único
+          espaço, facilitando a consulta dos interessados.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">📲</div>
+
+        <h3>Contacto direto</h3>
+
+        <p>
+          Botões estratégicos permitem que o interessado entre
+          diretamente em contacto pelo WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">📝</div>
+
+        <h3>Pré-inscrição</h3>
+
+        <p>
+          O visitante pode deixar os seus dados e indicar
+          a formação em que está interessado.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">📸</div>
+
+        <h3>Galeria dos formandos</h3>
+
+        <p>
+          Os trabalhos realizados durante as formações podem
+          ser usados para demonstrar os resultados das aulas.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">🔗</div>
+
+        <h3>Links das turmas</h3>
+
+        <p>
+          Cada nova turma pode receber uma página específica
+          para facilitar a divulgação e as inscrições.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACTOS -->
+
+<section class="contact" id="contactos">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">Contactos</span>
+
+      <h2>
+        Encontre a Academia Dádiva
+      </h2>
+
+      <p>
+        Informações abaixo são fictícias e serão substituídas
+        pelos dados oficiais no projeto final.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <div class="contact-card">
+
+        <h3>Informações da Academia</h3>
+
+        <div class="contact-item">
+
+          <span>📍</span>
+
+          <div>
+            <strong>Localização</strong>
+            <small>
+              Luanda, Angola — endereço demonstrativo
+            </small>
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <span>📱</span>
+
+          <div>
+            <strong>WhatsApp</strong>
+            <small>
+              +244 923 111 222
+            </small>
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <span>📞</span>
+
+          <div>
+            <strong>Telefone</strong>
+            <small>
+              +244 222 111 222
+            </small>
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <span>🕐</span>
+
+          <div>
+            <strong>Atendimento</strong>
+            <small>
+              Segunda a Sábado · 08h00–17h00
+            </small>
+          </div>
+
+        </div>
+
+
+        <a
+          href="https://wa.me/244923111222?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20formações."
+          target="_blank"
+          class="btn btn-primary"
+          style="width:100%;margin-top:10px;">
+          📲 Falar pelo WhatsApp
+        </a>
+
+      </div>
+
+
+      <div class="map">
+
+        <div>
+
+          <strong style="font-size:20px;">
+            📍 Localização
+          </strong>
+
+          <p style="margin-top:6px;">
+            Mapa demonstrativo
+          </p>
+
+          <small>
+            No projeto final poderá ser integrado
+            o Google Maps com a localização real.
+          </small>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>🎓 Academia de Formação Dádiva</h3>
+
+        <p>
+          Formação prática para desenvolver competências
+          e criar novas oportunidades.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Formações</h3>
+
+        <p><a href="#cursos">Pastelaria</a></p>
+        <p><a href="#cursos">Culinária</a></p>
+        <p><a href="#cursos">Fast Food</a></p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Contacto</h3>
+
+        <p>+244 923 111 222</p>
+        <p>Luanda, Angola</p>
+        <p>Segunda–Sábado</p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 Academia de Formação Dádiva — Demonstração criada pela
+      Fely e Amigos – Soluções Digitais.
+      Dados apresentados são fictícios.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/244923111222?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20formações%20da%20Academia%20Dádiva."
+  target="_blank"
+  aria-label="WhatsApp">
+  ☎
+</a>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+function toggleMenu(){
+
+  document.getElementById("nav").classList.toggle("active");
+
+}
+
+
+document.querySelectorAll("nav a").forEach(function(link){
+
+  link.addEventListener("click",function(){
+
+    document.getElementById("nav").classList.remove("active");
+
+  });
+
+});
+
+
+function toast(message){
+
+  const box=document.getElementById("toast");
+
+  box.textContent=message;
+
+  box.classList.add("show");
+
+  setTimeout(function(){
+
+    box.classList.remove("show");
+
+  },3000);
+
+}
+
+
+function setCourse(course){
+
+  document.getElementById("curso").value=course;
+
+}
+
+
+function selectCourse(course){
+
+  document.getElementById("curso").value=course;
+
+  document
+    .getElementById("inscricao")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function sendRegistration(){
+
+  const nome=document.getElementById("nome").value.trim();
+
+  const telefone=document.getElementById("telefone").value.trim();
+
+  const curso=document.getElementById("curso").value;
+
+  const turma=document.getElementById("turma").value;
+
+  const mensagem=document.getElementById("mensagem").value.trim();
+
+
+  if(!nome || !telefone || !curso){
+
+    toast("Preencha o nome, telefone e formação.");
+
+    return;
+
+  }
+
+
+  const text=
+
+    "Olá! 👋 Gostaria de fazer uma pré-inscrição na Academia de Formação Dádiva.%0A%0A"+
+
+    "Nome: "+encodeURIComponent(nome)+"%0A"+
+
+    "Telefone: "+encodeURIComponent(telefone)+"%0A"+
+
+    "Formação: "+encodeURIComponent(curso)+"%0A"+
+
+    "Turma: "+encodeURIComponent(turma || "A definir")+"%0A"+
+
+    "Mensagem: "+encodeURIComponent(mensagem || "Sem observações");
+
+
+  window.open(
+    "https://wa.me/244923111222?text="+text,
+    "_blank"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
